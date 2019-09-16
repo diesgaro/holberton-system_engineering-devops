@@ -1,3 +1,3 @@
-# 0x02-shell_redirections
+# 0x03-shell_variables_expansions
 
-This repository contains th activities to the proyect 0x02-shell_redirections and his solutions.
+This repository contains th activities to the proyect 0x03-shell_variables_expansions and his solutions.
