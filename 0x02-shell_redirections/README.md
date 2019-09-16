@@ -1,3 +1,3 @@
-# holberton-system_engineering-devops
+# 0x02-shell_redirections
 
-This repository contains the proyect 0x00-shell_basics
+This repository contains th activities to the proyect 0x02-shell_redirections and his solutions.
