@@ -4,5 +4,5 @@ x=1
 while [ $x -le 10 ]
 do
     echo "Holberton School"
-    let x=x+1
+    let x++
 done
