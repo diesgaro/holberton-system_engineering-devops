@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-# Bash script that displays Holberton School 10 times
+# Bash script that loops from 1 to 10 and displays bad, good and HS
+# for any iterations
 x=0
 while [ $x -le 9 ]
 do
