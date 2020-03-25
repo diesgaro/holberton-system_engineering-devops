@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# Bash Script that connect with a remote server with ssh protocol
+ssh-keygen -b 4096 -t rsa -N betty -f holberton
