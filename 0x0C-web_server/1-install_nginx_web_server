@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 # Bash script that install and configurate a nginx web server
+# to execute in remote server: ssh USER@IP "bash -s" -- < ./1-install_nginx_web_server
 sudo apt-get -y update
 sudo apt-get -y install nginx
 sudo ufw allow 'Nginx HTTP'
