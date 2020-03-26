@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# Bash script that install and configurate a nginx web server
+sudo apt-get -y update
+sudo apt-get -y install nginx
+sudo ufw allow 'Nginx HTTP'
+sudo chmod ugo+w /var/www/html/index.nginx-debian.html
+echo "Holberton School for the win!" > /var/www/html/index.nginx-debian.html
