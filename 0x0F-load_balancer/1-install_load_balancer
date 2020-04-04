@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# Install load balancer on 1265-lb-01
+
+sudo apt-get -y update
+sudo apt-get -y install haproxy
+sudo echo "ENABLED=1" >> /etc/default/haproxy
+sudo echo "
+frontend front
+	bind *:80
+	mode http
+	default_backend back
+backend back
+    balance roundrobin
+    server 1265-web-01 35.196.6.135:80
+    server 1265-web-02 52.23.205.208:80
+" >> /etc/haproxy/haproxy.cfg
+sudo service haproxy restart
