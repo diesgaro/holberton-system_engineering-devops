@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+#Bash script that remove the actual symbolic link in ..enabled/default
+#and create it in the same location because when I install nginx in
+#docker container I dont have any error
+sudo ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+sudo service nginx stop
