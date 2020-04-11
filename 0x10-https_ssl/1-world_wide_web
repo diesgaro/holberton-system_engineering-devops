@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+# Bash script tha will display information about subdomains
+
+func ()
+{
+    host="$2.""$1"
+
+    request=$(dig "$host" | grep -A1 'ANSWER SECTION:' | tail -n1)
+
+    echo "$request" | awk '{print "The subdomain '"$2"' is a "$4" record and points to "$5"" }'
+}
+
+if [[ $# == 1 ]];
+then
+    func "$1" www
+    func "$1" lb-01
+    func "$1" web-01
+    func "$1" web-02
+elif [[ $# == 2 ]];
+then
+    func "$1" "$2"
+fi
+
+exit 0
