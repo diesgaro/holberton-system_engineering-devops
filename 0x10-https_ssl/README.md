@@ -3,12 +3,16 @@
 ##Resources
 
 https://www.instantssl.com/http-vs-https
+
 https://www.sslshopper.com/why-ssl-the-purpose-of-using-ssl-certificates.html
+
 https://devops.ionos.com/tutorials/install-and-configure-haproxy-load-balancer-on-ubuntu-1604/
+
 https://en.wikipedia.org/wiki/TLS_termination_proxy
+
 http://tldp.org/LDP/abs/html/complexfunct.html
 
-##Task
+## Task
 
 ### 0. HTTPS ABC
 As for project 0x07, use numbers in your answer file.
@@ -39,24 +43,25 @@ Requirements:
 * Add the subdomain web-02 to your domain, point it to your web-02 IP
 * Your Bash script must accept 2 arguments:
 1. domain:
-** type: string
-** what: domain name to audit
-** mandatory: yes
+* type: string
+* what: domain name to audit
+* mandatory: yes
 2. subdomain:
-** type: string
-** what: specific subdomain to audit
-** mandatory: no
+* type: string
+* what: specific subdomain to audit
+* mandatory: no
+
 * Output: The subdomain [SUB_DOMAIN] is a [RECORD_TYPE] record and points to [DESTINATION]
 * When only the parameter domain is provided, display information for its subdomains www, lb-01, web-01 and web-02 - in this specific order
 * When passing domain and subdomain parameters, display information for the specified subdomain
 * Ignore shellcheck case SC2086
 * Must use:
-** awk
-** at least one Bash function
+* awk
+* at least one Bash function
 * You do not need to handle edge cases such as:
-** Empty parameters
-** Nonexistent domain names
-** Nonexistent subdomains
+* Empty parameters
+* Nonexistent domain names
+* Nonexistent subdomains
 
 ### 2. HAproxy SSL termination
 “Terminating SSL on HAproxy” means that HAproxy is configured to handle encrypted traffic, unencrypt it and pass it on to its destination.
@@ -65,11 +70,11 @@ Create a certificate using certbot and configure HAproxy to accept encrypted tra
 
 Requirements:
 
-*HAproxy must be listening on port TCP 443
-*HAproxy must be accepting SSL traffic
-*HAproxy must serve encrypted traffic that will return the / of your web server
-*When querying the root of your domain name, the page returned must contain Holberton School
-*Share your HAproxy config as an answer file (/etc/haproxy/haproxy.cfg)
+* HAproxy must be listening on port TCP 443
+* HAproxy must be accepting SSL traffic
+* HAproxy must serve encrypted traffic that will return the / of your web server
+* When querying the root of your domain name, the page returned must contain Holberton School
+* Share your HAproxy config as an answer file (/etc/haproxy/haproxy.cfg)
 
 The file 2-haproxy_ssl_termination must be your HAproxy configuration file
 
