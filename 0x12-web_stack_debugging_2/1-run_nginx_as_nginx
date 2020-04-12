@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+# Bash script that configure the user:group nginx to run nginx web-server
+
+# Create the user and group
+sudo useradd nginx
+sudo usermod -a -G nginx nginx
+
+# Modify the user of /etc/nginx/nginx.conf
+sudo sed -i 's/user www-data;/user nginx;/g' /etc/nginx/nginx.conf
+
+# Configure the listening on port 8080
+sudo sed -i 's/80/8080/g' /etc/nginx/sites-available/default
+
+# Set permissions to nginx resources
+chown -R nginx:nginx /var/log/nginx/
+chown -R nginx:nginx /etc/nginx/
+
+# Reload nginx
+sudo -u nginx service nginx restart
