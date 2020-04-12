@@ -1,0 +1,12 @@
+# Install ufw firewall
+sudo apt-get install -y ufw
+# Set default politics
+sudo ufw default deny incoming
+sudo ufw default allow outgoing
+# Allow ports
+sudo ufw allow ssh
+sudo ufw allow https
+sudo ufw allow http
+# Restart ufw
+sudo ufw disable
+sudo ufw enable
