@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 # Bash script that configure the user:group nginx to run nginx web-server
 
+# Kill apache2 service
+pkill apache2
+
 # Create the user and group
 sudo useradd nginx
 sudo usermod -a -G nginx nginx
@@ -14,6 +17,7 @@ sudo sed -i 's/80/8080/g' /etc/nginx/sites-available/default
 # Set permissions to nginx resources
 chown -R nginx:nginx /var/log/nginx/
 chown -R nginx:nginx /etc/nginx/
-chown nginx:nginx run/nginx.pid
+chown nginx:nginx /run/nginx.pid
+
 # Reload nginx
 sudo -u nginx service nginx restart
