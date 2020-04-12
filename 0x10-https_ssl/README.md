@@ -1,6 +1,6 @@
 # 0x10-https_ssl
 
-##Resources
+## Resources
 
 https://www.instantssl.com/http-vs-https
 
@@ -43,25 +43,25 @@ Requirements:
 * Add the subdomain web-02 to your domain, point it to your web-02 IP
 * Your Bash script must accept 2 arguments:
 1. domain:
-* type: string
-* what: domain name to audit
-* mandatory: yes
+   * type: string
+   * what: domain name to audit
+   * mandatory: yes
 2. subdomain:
-* type: string
-* what: specific subdomain to audit
-* mandatory: no
+   * type: string
+   * what: specific subdomain to audit
+   * mandatory: no
 
 * Output: The subdomain [SUB_DOMAIN] is a [RECORD_TYPE] record and points to [DESTINATION]
 * When only the parameter domain is provided, display information for its subdomains www, lb-01, web-01 and web-02 - in this specific order
 * When passing domain and subdomain parameters, display information for the specified subdomain
 * Ignore shellcheck case SC2086
 * Must use:
-* awk
-* at least one Bash function
+  * awk
+  * at least one Bash function
 * You do not need to handle edge cases such as:
-* Empty parameters
-* Nonexistent domain names
-* Nonexistent subdomains
+  * Empty parameters
+  * Nonexistent domain names
+  * Nonexistent subdomains
 
 ### 2. HAproxy SSL termination
 “Terminating SSL on HAproxy” means that HAproxy is configured to handle encrypted traffic, unencrypt it and pass it on to its destination.
