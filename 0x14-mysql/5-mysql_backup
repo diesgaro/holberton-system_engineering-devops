@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Script that make all databases backup and compress in .tar file
+# Usage: ./5-mysql_backup $ROOT_PASSWORD
+mysqldump -u root -p"$1" --all-databases > backup.sql
+tar czvf "$(date +%d-%m-%Y)".tar.gz backup.sql
