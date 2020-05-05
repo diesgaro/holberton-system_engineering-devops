@@ -30,9 +30,9 @@ if __name__ == "__main__":
 
     for data in data_todo:
         task_total += 1
-        if data['completed']:
+        if data.get('completed'):
             task_done += 1
-            list_todo.append('\t{}'.format(data['title']))
+            list_todo.append('\t{}'.format(data.get('title')))
 
     print("Employee {} is done with tasks({}/{}):".format(
             user_name,
