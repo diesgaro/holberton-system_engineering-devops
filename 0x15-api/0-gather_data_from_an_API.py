@@ -23,7 +23,6 @@ if __name__ == "__main__":
     data_user = requests.get(source_users).json()
     data_todo = requests.get(source_todo, params=params_todo).json()
 
-    user_name = data_user.get('name')
     task_done = 0
     task_total = 0
     list_todo = []
@@ -35,7 +34,7 @@ if __name__ == "__main__":
             list_todo.append('\t{}'.format(data.get('title')))
 
     print("Employee {} is done with tasks({}/{}):".format(
-            user_name,
+            data_user.get('name'),
             task_done,
             task_total
         )
