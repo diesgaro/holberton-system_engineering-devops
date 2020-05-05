@@ -14,18 +14,19 @@ from sys import argv
 
 if __name__ == "__main__":
     userId = argv[1]
-    source_users = 'https://jsonplaceholder.typicode.com/users'
-    source_todo = 'https://jsonplaceholder.typicode.com/todos'
+    source_users = 'https://jsonplaceholder.typicode.com/users/{}'.format(
+        userId)
 
-    params_user = {'id': userId}
+    source_todo = 'https://jsonplaceholder.typicode.com/todos'
     params_todo = {'userId': userId}
 
-    data_user = requests.get(source_users, params=params_user).json()
+    data_user = requests.get(source_users).json()
     data_todo = requests.get(source_todo, params=params_todo).json()
 
-    list_todo = []
+    user_name = data_user.get('name')
     task_done = 0
     task_total = 0
+    list_todo = []
 
     for data in data_todo:
         task_total += 1
@@ -34,7 +35,7 @@ if __name__ == "__main__":
             list_todo.append('\t{}'.format(data['title']))
 
     print("Employee {} is done with tasks({}/{}):".format(
-            data_user[0]['name'],
+            user_name,
             task_done,
             task_total
         )
